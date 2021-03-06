@@ -1,10 +1,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    /* ... */
+    // directory name: 'build directory'
+    public: '/',
+    src: '/dist',
   },
   plugins: [
     /* ... */
+    '@snowpack/plugin-svelte',
+    '@snowpack/plugin-typescript',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -12,7 +16,8 @@ module.exports = {
   ],
   optimize: {
     /* Example: Bundle your final build: */
-    // "bundle": true,
+    bundle: true,
+    minify: true,
   },
   packageOptions: {
     /* ... */
